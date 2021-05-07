@@ -1,0 +1,9 @@
+@import url('navbar.css');
+body{
+    background: #0E153A;
+    margin:0;
+}
+
+.montserrat{
+    font-family: 'Montserrat';
+}

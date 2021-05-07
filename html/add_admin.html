@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/css.css">
+        <link rel="stylesheet" href="../css/show_vol.css">
+        <link rel="stylesheet" href="../css/addform.css">
+        <title>Add Admin</title>
+    </head>
+    <body>
+        <!-- Nav Bar -->
+        <div class="navbar">
+            <a class="navbar-item-1" href="show_vols.html">show volunteers</a>
+            <a class="navbar-item-2" href="add_vols.html">add volunteers</a>
+            <a class="navbar-item-3" href="show_usrs.html">show users</a>
+            <a class="navbar-item-4" href="add_user.html">add user</a>
+            <a class="navbar-item-5" href="#">admins</a>
+        </div>
+
+        <!-- Add Form -->
+        <form id="add_form" action="html/show_vols.html" method="POST">
+            <div class="add_form_container">
+                <input id="add_form_input_e-mail" type="text" placeholder="e-mail">
+                <input id="add_form_input_pswd" type="password" placeholder="password">
+                <input id="add_form_input_pswd2" type="password" placeholder="password">
+                <input id="add_form_input_name" type="text" placeholder="name">
+                <input id="add_form_input_surname" type="text" placeholder="surname">
+                <button>add admin</button>
+            </div>
+        </form>
+
+    </body>
+</html>

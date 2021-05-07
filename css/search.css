@@ -1,0 +1,228 @@
+.dropdown-container{
+    z-index: 5;
+}
+
+.search-search{
+    height: auto;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    width: 85%;
+    outline: none;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.search-search::placeholder{
+    color: black;
+}
+
+.search-container{
+    display: flex;
+    background: #E2F3F5;
+    align-items: center;
+    height: 60px;
+}
+
+.search-container:hover{
+    cursor: pointer;
+}
+
+.search-icon{
+    margin-right: 10px;
+}
+
+.search-icon:hover{
+    cursor: pointer;
+}
+
+.searchby-icon{
+    transition: transform .2s ease-in-out;
+}
+
+.search-order-container:hover > .searchby-icon{
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 1591px) {
+    .search-order-container{
+        display: flex;
+        background: #A0BBFF;
+        align-items: center;
+        padding-right: 40px;
+        height: 60px;
+        width: 20%;
+    }
+
+    .search-order-container > span{
+        font-family: 'Montserrat';
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1591px) {
+    .search-order-container{
+        display: flex;
+        background: #A0BBFF;
+        align-items: center;
+        padding-right: 40px;
+        height: 60px;
+        width: 20%;
+    }
+
+    .search-order-container > span{
+        font-family: 'Montserrat';
+        font-size: 30px;
+    }
+}
+
+/*--- Dropdown ---*/
+/* Container */
+@media (min-width: 1591px){
+    .dropdown-container{
+        background: #A0BBFF;
+        right: 0;
+        top: 129px;
+        width: 20%;
+        position: absolute;
+        display: none;
+    }
+
+    /* Item */
+    .dropdown-item{
+        list-style-type: none;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 30px;
+        padding-left: 10%;
+    }
+
+    .dropdown-item:hover{
+        cursor: pointer;
+        background: #2c43b6;
+        color: white;
+    }
+
+}
+
+@media (max-width: 1591px){
+    .dropdown-container{
+        background: #A0BBFF;
+        right: 0;
+        top: 129px;
+        width: 20%;
+        position: absolute;
+        display: none;
+    }
+
+    /* Item */
+    .dropdown-item{
+        list-style-type: none;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 25px;
+        padding-left: 10%;
+    }
+
+    .dropdown-item:hover{
+        cursor: pointer;
+        background: #3D5AF1;
+        color: white;
+    }
+    
+}
+
+@media (max-width: 1105px){
+    .dropdown-container{
+        background: #A0BBFF;
+        right: 0;
+        top: 198px;
+        width: 20%;
+        position: absolute;
+        display: none;
+    }
+
+    /* Item */
+    .dropdown-item{
+        list-style-type: none;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 25px;
+        padding-left: 10%;
+    }
+
+    .dropdown-item:hover{
+        cursor: pointer;
+        background: #3D5AF1;
+        color: white;
+    }
+}
+
+@media (max-width: 667px){
+    .dropdown-container{
+        background: #A0BBFF;
+        right: 0;
+        top: 267px;
+        width: 25%;
+        position: absolute;
+        display: none;
+    }
+
+    /* Item */
+    .dropdown-item{
+        list-style-type: none;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 25px;
+        padding-left: 10%;
+    }
+
+    .dropdown-item:hover{
+        cursor: pointer;
+        background: #3D5AF1;
+        color: white;
+    }
+}
+
+@media (max-width: 438px){
+    .dropdown-container{
+        background: #A0BBFF;
+        right: 0;
+        top: 336px;
+        width: 30%;
+        position: absolute;
+        display: none;
+    }
+
+    .searchby-text{
+        display: none;
+    }
+
+    /* Item */
+    .dropdown-item{
+        list-style-type: none;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 25px;
+        padding-left: 10%;
+    }
+
+    .dropdown-item:hover{
+        cursor: pointer;
+        background: #3D5AF1;
+        color: white;
+    }
+}
+
+.search-order-container:hover ~ .dropdown-container{
+    display: block;
+}
+
+.dropdown-container:hover{
+    display: block;
+}
+
+/* List */
+.dropdown-list{
+    padding: 0;
+    margin: 0;
+}

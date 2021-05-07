@@ -1,0 +1,261 @@
+@media (max-width: 700px) {
+
+    /* Message */
+    .display-none{
+        display: none;
+    }
+
+    .info{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        background: #E2F3F5;
+        color: #3D5AF1;
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Montserrat';
+    }
+
+    .info-warning{
+        background: rgba(245, 221, 0, 0.85);
+        color: black;
+    }
+
+    .info-ok{
+        background: rgba(23, 185, 120, 0.85);
+        color: #A7FF83;
+    }
+
+    .info-error{
+        background: rgba(232, 90, 90, 0.85);
+        color: #F1C93D;
+    }
+
+    .info-info{
+        background: rgba(226, 243, 245, 0.85);
+        color: #3D5AF1;
+    }
+
+    .close-icon{
+        float: right;
+        transform: translateX(-70%);
+        border-radius: 100%;
+        padding: 5px;
+    }
+
+    .close-icon-info{
+        fill: #3D5AF1;
+    }
+
+    .close-icon-warning{
+        fill: black;
+    }
+
+    .close-icon-ok{
+        fill: #A7FF83;
+    }
+
+    .close-icon-error{
+        fill: #F1C93D;
+    }
+
+    .close-icon:hover{
+        cursor: pointer;
+    }
+
+    /* Body */
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin: auto;
+        margin-top: 50vh;
+        transform: translateY(-50%);
+    }
+
+    .img{
+        margin:auto;
+        width: 300px;
+    }
+
+    .vertical-container{
+        height: fit-content;
+        margin:auto;
+        padding: 20px
+    }
+
+    .vertical-container > .btn{
+        display: block;
+        margin: 10px auto 10px auto;
+    }
+
+    .input{
+        text-align: center;
+    }
+
+    .input:focus::placeholder{
+        color: rgba(0, 0, 0, 0);
+    }
+
+    .input::placeholder{
+        color: #E2F3F5;
+        text-align: center;
+    }
+
+    .btn{
+        width: 400px;
+        height: 50px;
+        font-size: 30px;
+        font-family: 'Montserrat';
+        border: none;
+        border-radius: 5px;
+        outline:none;
+    }
+
+    .bg-color1{
+        background: #3D5AF1;
+        color: #E2F3F5;
+    }
+
+    .bg-color2{
+        background: #E2F3F5;
+        color: #3D5AF1;
+    }
+
+    .bg-color2:hover{
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 700px) {
+  
+    /* Message */
+    .display-none{
+        display: none;
+    }
+
+    .info{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        background: #E2F3F5;
+        color: #3D5AF1;
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Montserrat';
+    }
+
+    .info-warning{
+        background: rgba(245, 221, 0, 0.85);
+        color: black;
+    }
+
+    .info-ok{
+        background: rgba(23, 185, 120, 0.85);
+        color: #A7FF83;
+    }
+
+    .info-error{
+        background: rgba(232, 90, 90, 0.85);
+        color: #F1C93D;
+    }
+
+    .info-info{
+        background: rgba(226, 243, 245, 0.85);
+        color: #3D5AF1;
+    }
+
+    .close-icon{
+        float: right;
+        transform: translateX(-70%);
+        border-radius: 100%;
+        padding: 5px;
+    }
+
+    .close-icon-info{
+        fill: #3D5AF1;
+    }
+
+    .close-icon-warning{
+        fill: black;
+    }
+
+    .close-icon-ok{
+        fill: #A7FF83;
+    }
+
+    .close-icon-error{
+        fill: #F1C93D;
+    }
+
+    .close-icon:hover{
+        cursor: pointer;
+    }
+
+    /* Body */
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin: auto;
+        margin-top: 50vh;
+        transform: translateY(-50%);
+    }
+
+    .img{
+        margin:auto;
+    }
+
+    .vertical-container{
+        height: fit-content;
+        margin:auto;
+        padding: 20px
+    }
+
+    .vertical-container > .btn{
+        display: block;
+        margin: 10px auto 10px auto;
+    }
+
+    .input{
+        text-align: center;
+    }
+
+    .input:focus::placeholder{
+        color: rgba(0, 0, 0, 0);
+    }
+
+    .input::placeholder{
+        color: #E2F3F5;
+        text-align: center;
+    }
+
+    .btn{
+        width: 600px;
+        height: 50px;
+        font-size: 30px;
+        font-family: 'Montserrat';
+        border: none;
+        border-radius: 5px;
+        outline:none;
+    }
+
+    .bg-color1{
+        background: #3D5AF1;
+        color: #E2F3F5;
+    }
+
+    .bg-color2{
+        background: #E2F3F5;
+        color: #3D5AF1;
+    }
+
+    .bg-color2:hover{
+        cursor: pointer;
+    }
+
+}

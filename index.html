@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="css/css.css">
+        <link rel="stylesheet" href="css/login.css">
+        <title>Home</title>
+    </head>
+    <body>
+        <!-- Message -->
+        <div class="info info-ok display-none">
+            <span class="message"></span>
+            <svg class="close-icon" width="30px" viewBox="0 0 329.26933 329" xmlns="http://www.w3.org/2000/svg"><path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"/></svg>
+        </div>
+
+        <!-- Body -->
+        <form id="form" action="html/show_vols.html" method="POST">
+            <div class="container">
+                <div class="vertical-container">
+                    <input type="text" placeholder="user" class="input btn bg-color1" id="input-login" spellcheck="false" autocomplete="off"/>
+                    <input type="password" placeholder="password" class="input btn bg-color1" id="input-password" spellcheck="false" autocomplete="off"/>
+                    <button type="submit" class="submit btn bg-color2">login</button>
+                </div>
+                <img class="img" src="media/img/entrando.svg">
+            </div>
+        </form>
+
+        <script src="js/sweetalert2@10.js"></script>
+        <script src="js/login-validate.js"></script>
+        <script src="js/myAlerts.js"></script>
+        
+    </body>
+</html>

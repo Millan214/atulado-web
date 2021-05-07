@@ -1,0 +1,8 @@
+@import url('search.css');
+@import url('cards.css');
+
+.cards-board{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

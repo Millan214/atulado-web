@@ -1,0 +1,86 @@
+.navbar{
+    background: #3D5AF1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.navbar-item-1{
+    color: #E2F3F5;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    background: #3D5AF1;
+}
+
+.navbar-item-1:hover{
+    background: #E2F3F5;
+    color: #3D5AF1;
+}
+
+.navbar-item-2{
+    color: #E2F3F5;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    background: #354fd1;
+}
+
+.navbar-item-2:hover{
+    background: #E2F3F5;
+    color: #354fd1;
+}
+
+.navbar-item-3{
+    color: #E2F3F5;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    background: #2e45b8;
+}
+
+.navbar-item-3:hover{
+    background: #E2F3F5;
+    color: #2e45b8;
+}
+
+.navbar-item-4{
+    color: #E2F3F5;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    background: #263a9b;
+}
+
+.navbar-item-4:hover{
+    background: #E2F3F5;
+    color: #263a9b;
+}
+
+.navbar-item-5{
+    color: #E2F3F5;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 40px;
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    background: #1e2d7a;
+}
+
+.navbar-item-5:hover{
+    background: #E2F3F5;
+    color: #1e2d7a;
+}

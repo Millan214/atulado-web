@@ -1,0 +1,108 @@
+.card-container{
+    display: inline-block;
+    margin: 20px;   
+    border-radius: 10px;
+    background: white;
+    box-shadow:  10px 10px 10px black
+}
+
+/* Delete */
+.card-container-delete{
+    background-color: #A0BBFF;
+    float: right;
+    height: 26px;
+    border-radius: 0px 10px 0px 10px;
+    padding: 2px;
+}
+
+.card-container-delete:hover{
+    cursor: pointer;
+}
+
+/* Body */
+.card-container-body{
+    padding: 20px;
+    display: flex;
+}
+
+.card-container-body-image-wrapper{
+    background-color: lightblue;
+}
+
+    /*--Fit the photo into a circle */
+.card-container-body-image-container{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: auto;
+}
+
+.greenContainer{
+    border: 6px solid #17B978;
+    background: #17B978;
+}
+
+.redContainer{
+    border: 6px solid #E85A5A;
+    background: #E85A5A;
+}
+
+.card-container-body-image-container-photo{
+    width: 150%;
+    height: auto;
+    margin-top: 50%;
+    margin-left: -25%;
+    transform: translateY(-50%);
+}
+
+/* Rate (stars) */
+.card-container-body-image-rate{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-container-body-image-rate-star{
+    width: 20px;
+    margin: 2px;
+}
+
+/* User name/surname */
+.card-container-body-name{
+    margin: auto;
+}
+
+.card-container-body-name > p{
+    margin: 0;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+/* Footer */
+.card-container-footer{
+    background: #3D5AF1;
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+}
+
+.card-container-footer > span{
+    color: white;
+    font-family: 'Montserrat';
+    vertical-align: middle;
+}
+
+.card-container-footer-icon{
+    vertical-align: middle;
+}
+
+.card-container-footer-loctext{
+    font-weight: bold;
+}
+
+.card-container-footer-location{
+    margin-left: 15px;
+    font-size: 15px;
+}
