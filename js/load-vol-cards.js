@@ -31,7 +31,7 @@ for (let i = 0; i < 30; i++) {
             img = '<img class="card-container-body-image-container-photo" src="../media/img/c6.jpg"></img>'
             break;
         case 5:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c6d"></img>'
+            img = '<img class="card-container-body-image-container-photo" src="../media/img/c6d.jpg"></img>'
             break;
         case 6:
             img = '<img class="card-container-body-image-container-photo" src="../media/img/c11.jpg"></img>'

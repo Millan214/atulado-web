@@ -84,3 +84,25 @@
     background: #E2F3F5;
     color: #1e2d7a;
 }
+
+.svglogout{
+    width: 40px;
+    height: 40px;
+    fill: #E2F3F5;
+}
+
+#logout{
+    background: #162158;
+    border: none;
+    align-items: center;
+    padding: 10px;
+}
+
+#logout:hover{
+    background: #E2F3F5;
+    cursor: pointer;
+}
+
+#logout:hover > svg{
+    fill: black;
+}

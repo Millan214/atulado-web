@@ -25,13 +25,13 @@ for (let i = 0; i < 309; i++) {
             img = '<img class="card-container-body-image-container-photo" src="../media/img/a10.jpg"></img>'
             break;
         case 3:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c4b.jpg"></img>'
+            img = '<img class="card-container-body-image-container-photo" src="../media/img/p4.jpg"></img>'
             break;
         case 4:
             img = '<img class="card-container-body-image-container-photo" src="../media/img/c6.jpg"></img>'
             break;
         case 5:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c6d"></img>'
+            img = '<img class="card-container-body-image-container-photo" src="../media/img/c6d.jpg"></img>'
             break;
         case 6:
             img = '<img class="card-container-body-image-container-photo" src="../media/img/c11.jpg"></img>'
