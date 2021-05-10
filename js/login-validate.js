@@ -4,13 +4,23 @@ const passwd = document.getElementById('input-password')
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-    if (login.value == '' || login.value == null || passwd.value == '' || passwd.value == null) {
+
+    firebase.auth().signInWithEmailAndPassword(login.value, passwd.value)
+    .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        document.location.href = 'html\\show_vols.html'
+    })
+    .catch((error) => {
+        var errorCode = error.code.substring(5);
+        var errorMessage = error.message;
+
         Swal.fire({
             icon: 'error',
-            title: '<span class="montserrat">Empty fields!</span>',
-            text: 'Please fill all the fields'
+            title: '<span class="montserrat">'+errorCode+'</span>',
+            text: errorMessage
           })
-    }else{
-        document.location.href = 'html\\show_vols.html';
-    }
+
+    });
+
 })
