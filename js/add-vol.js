@@ -61,7 +61,8 @@ add_form.addEventListener("submit", (e) => {
               name: input_name.value,
               surname: input_surname.value,
               email: input_email.value,
-              available: true
+              available: true,
+              rate: 0
             })
             .then(() => {
               console.log("Document written successfully");

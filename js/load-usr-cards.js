@@ -1,101 +1,80 @@
-const board = document.querySelector('.cards-board')
-var cards = []
+const board = document.querySelector(".cards-board");
+var cards = [];
+var db = firebase.firestore();
 
-for (let i = 0; i < 309; i++) {
-    var rateimg = ''
-    var img = ''
-    var randimg = Math.floor(Math.random() * 25)
-    var rate = Math.floor(Math.random() * 5)
-
-    switch (randimg) {
-        case 0:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c9.jpeg"></img>'
-            break;
-        case 1:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/a4.jpg"></img>'
-            break;
-        case 2:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/a10.jpg"></img>'
-            break;
-        case 3:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/p4.jpg"></img>'
-            break;
-        case 4:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c6.jpg"></img>'
-            break;
-        case 5:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c6d.jpg"></img>'
-            break;
-        case 6:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/c11.jpg"></img>'
-            break;
-        case 7:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/castor.jpg"></img>'
-            break;
-        case 8:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/delfin.jpg"></img>'
-            break;
-        case 9:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/dori.jpg"></img>'
-            break;
-        case 10:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/gatomeme.jpg"></img>'
-            break;
-        case 11:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/loro.jpg"></img>'
-            break;
-        case 12:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/mapache.jpg"></img>'
-            break;
-        case 13:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/star.jpg"></img>'
-            break;
-        case 14:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/p4.jpg"></img>'
-            break;
-        case 15:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/p6.jpg"></img>'
-            break;
-        case 16:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/pez.jpg"></img>'
-            break;
-        case 17:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/pollito.jpg"></img>'
-            break;
-        case 18:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/pollito2.jpg"></img>'
-            break;
-        case 19:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/pulpo.jpg"></img>'
-            break;
-        case 20:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/simba.jpg"></img>'
-            break;
-        case 21:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/ardilla.png"></img>'
-            break;
-        case 22:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/bobesponja_rosa.png"></img>'
-            break;
-        case 23:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/pato.png"></img>'
-            break;
-        case 24:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/perro.png"></img>'
-            break;
-        default:
-            img = '<img class="card-container-body-image-container-photo" src="../media/img/perro.png"></img>'
-            break;
-    }
-
-    var state = 'redContainer'
-    var randstate = Math.floor(Math.random() * 2)
-    if(randstate == 0){
-        state = 'greenContainer'
-    }
-
-    var card = '<div class="card-container"><div class="card-container-delete"><img class="card-container-delete-icon" src="../media/img/delete.svg"></div><div class="card-container-body"><div class="card-container-body-image"><div class="card-container-body-image-container '+state+'">'+img+'</div><div class="card-container-body-image-rate">'+rateimg+'</div></div><div class="card-container-body-name"><p class="card-container-body-user-name">Name</p><p class="card-container-body-user-surname">Surname</p></div></div><div class="card-container-footer"><img class="card-container-footer-icon" src="../media/img/location.svg"><span class="card-container-footer-loctext">Location</span><span class="card-container-footer-location">Madrid</span></div></div>'
-    cards += card
+async function getMarker() {
+  const snapshot = await firebase.firestore().collection("users").get();
+  return snapshot.docs.map((doc) => doc.data());
 }
 
-board.innerHTML = cards
+Promise.resolve(getMarker()).then((users) => {
+  users.forEach((users) => {
+    var state = "whiteContainer";
+    var img =
+      '<img class="card-container-body-image-container-photo" src="../media/img/ardilla.png"></img>';
+    var location = "Madrid";
+    var card =
+      '<div class="card-container"><div class="card-container-delete"><img class="card-container-delete-icon" id="' +
+      users.email +
+      '" src="../media/img/delete.svg"></div><div class="card-container-body"><div class="card-container-body-image"><div class="card-container-body-image-container ' +
+      state +
+      '">' +
+      img +
+      '</div></div><div class="card-container-body-name"><p class="card-container-body-user-name">' +
+      users.name +
+      '</p><p class="card-container-body-user-surname">' +
+      users.surname +
+      '</p></div></div><div class="card-container-footer"><img class="card-container-footer-icon" src="../media/img/location.svg"><span class="card-container-footer-loctext">Location</span><span class="card-container-footer-location">' +
+      location +
+      "</span></div></div>";
+
+    board.innerHTML += card;
+    /**
+     * Primero cargo todos las cartas y luego les añado los click listener
+     * Cada icono de eliminar en la tarjeta tiene como id el correo del voluntario -> id:"correo@gmail.com"
+     */
+    document.getElementById(users.email).addEventListener("load", () => {
+      document.getElementById(users.email).addEventListener("click", () => {
+        Swal.fire({
+          title:
+            "<span class='montserrat'>Do you really want to delete " +
+            users.email +
+            "?</span>",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Delete from firestore
+            db.collection("users")
+              .doc(users.email)
+              .delete()
+              .then(() => {
+                console.log("Document successfully deleted!");
+                Swal.fire(
+                  "<span class='montserrat'>User deleted!</span>",
+                  "The user <b>" +
+                    users.email +
+                    "</b> has been deleted scuccessfully!",
+                  "success"
+                );
+                window.location.reload();
+              })
+              .catch((error) => {
+                console.error("Error removing document: ", error);
+                Swal.fire({
+                  icon: "error",
+                  title:
+                    '<span class="montserrat">' + "Server error" + "</span>",
+                  text: error,
+                });
+              });
+          }
+        });
+      });
+    });
+  });
+});

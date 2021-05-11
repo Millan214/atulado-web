@@ -48,6 +48,11 @@
     background: #E85A5A;
 }
 
+.whiteContainer{
+    border: 6px solid #fff;
+    background: #fff;
+}
+
 .card-container-body-image-container-photo{
     width: 150%;
     height: auto;

@@ -15,7 +15,7 @@ Promise.resolve(getMarker()).then((volunteers) => {
     }
     var img =
       '<img class="card-container-body-image-container-photo" src="../media/img/ardilla.png"></img>';
-    var rate = 4;
+    var rate = volunteer.rate;
     var rateimg = "";
     for (let s = 0; s < rate; s++) {
       rateimg +=
@@ -27,7 +27,9 @@ Promise.resolve(getMarker()).then((volunteers) => {
     }
     var location = "Madrid";
     var card =
-      '<div class="card-container"><div class="card-container-delete"><img class="card-container-delete-icon" id="'+volunteer.email+'" src="../media/img/delete.svg"></div><div class="card-container-body"><div class="card-container-body-image"><div class="card-container-body-image-container ' +
+      '<div class="card-container"><div class="card-container-delete"><img class="card-container-delete-icon" id="' +
+      volunteer.email +
+      '" src="../media/img/delete.svg"></div><div class="card-container-body"><div class="card-container-body-image"><div class="card-container-body-image-container ' +
       state +
       '">' +
       img +
@@ -40,8 +42,53 @@ Promise.resolve(getMarker()).then((volunteers) => {
       '</p></div></div><div class="card-container-footer"><img class="card-container-footer-icon" src="../media/img/location.svg"><span class="card-container-footer-loctext">Location</span><span class="card-container-footer-location">' +
       location +
       "</span></div></div>";
-      // TODO : Añadir <script></script> para el event listener de eliminar -=> con id:e-mail
     board.innerHTML += card;
-    
+    /**
+     * Primero cargo todos las cartas y luego les añado los click listener
+     * Cada icono de eliminar en la tarjeta tiene como id el correo del voluntario -> id:"correo@gmail.com"
+     */
+    document.getElementById(volunteer.email).addEventListener("load", () => {
+      document.getElementById(volunteer.email).addEventListener("click", () => {
+        Swal.fire({
+          title:
+            "<span class='montserrat'>Do you really want to delete " +
+            volunteer.email +
+            "?</span>",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Delete from firestore
+            db.collection("volunteers")
+              .doc(volunteer.email)
+              .delete()
+              .then(() => {
+                console.log("Document successfully deleted!");
+                Swal.fire(
+                  "<span class='montserrat'>Volunteer deleted!</span>",
+                  "The volunteer <b>" +
+                    volunteer.email +
+                    "</b> has been deleted scuccessfully!",
+                  "success"
+                );
+                window.location.reload();
+              })
+              .catch((error) => {
+                console.error("Error removing document: ", error);
+                Swal.fire({
+                  icon: "error",
+                  title:
+                    '<span class="montserrat">' + "Server error" + "</span>",
+                  text: error,
+                });
+              });
+          }
+        });
+      });
+    });
   });
 });
