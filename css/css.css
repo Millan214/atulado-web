@@ -1,26 +1,26 @@
-@import url('navbar.css');
-@import url('load.css');
-body{
-    background: #0E153A;
-    margin:0;
+@import url("navbar.css");
+@import url("load.css");
+body {
+  background: #0e153a;
+  margin: 0;
 }
 
-.montserrat{
-    font-family: 'Montserrat';
+.montserrat {
+  font-family: "Montserrat";
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #3D5AF1; 
+  background: #3d5af1;
   border-radius: 0px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #E2F3F5; 
+  background: #e2f3f5;
 }

@@ -7,13 +7,6 @@ for (let i = 0; i < 309; i++) {
     var randimg = Math.floor(Math.random() * 25)
     var rate = Math.floor(Math.random() * 5)
 
-    for (let s = 0; s < rate; s++) {
-        rateimg += '<img class="card-container-body-image-rate-star filledStar" src="../media/img/filledStar.svg"></img>'         
-    }
-    for (let se = 0; se < (5-rate); se++) {
-        rateimg += '<img class="card-container-body-image-rate-star emptyStar" src="../media/img/emptyStar.svg"></img>'         
-    }
-
     switch (randimg) {
         case 0:
             img = '<img class="card-container-body-image-container-photo" src="../media/img/c9.jpeg"></img>'

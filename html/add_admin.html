@@ -59,19 +59,20 @@
         </div>
 
         <!-- Add Form -->
-        <form id="add_form" action="html/show_vols.html" method="POST">
+        <form id="add_form" method="POST">
             <div class="add_form_container">
-                <input id="add_form_input_e-mail" type="text" placeholder="e-mail">
-                <input id="add_form_input_pswd" type="password" placeholder="password">
-                <input id="add_form_input_pswd2" type="password" placeholder="password">
-                <input id="add_form_input_name" type="text" placeholder="name">
-                <input id="add_form_input_surname" type="text" placeholder="surname">
+                <input id="add_form_input_e-mail" type="text" placeholder="e-mail" autocomplete="off">
+                <input id="add_form_input_pswd" type="password" placeholder="password" autocomplete="off">
+                <input id="add_form_input_pswd2" type="password" placeholder="password" autocomplete="off">
                 <button>add admin</button>
             </div>
         </form>
 
         <!-- OTHER SCRIPTS -->
+        <script src="../js/sweetalert2@10.js"></script>
         <script src="../js/logout.js"></script>
+        <script src="../js/add-admin.js"></script>
         <script src="../js/loading.js"></script>
+        
     </body>
 </html>

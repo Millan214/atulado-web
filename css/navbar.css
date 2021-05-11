@@ -1,108 +1,108 @@
-.navbar{
-    background: #3D5AF1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.navbar {
+  background: #3d5af1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.navbar-item-1{
-    color: #E2F3F5;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-size: 40px;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: center;
-    background: #3D5AF1;
+.navbar-item-1 {
+  color: #e2f3f5;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 40px;
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+  background: #3d5af1;
 }
 
-.navbar-item-1:hover{
-    background: #E2F3F5;
-    color: #3D5AF1;
+.navbar-item-1:hover {
+  background: #e2f3f5;
+  color: #3d5af1;
 }
 
-.navbar-item-2{
-    color: #E2F3F5;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-size: 40px;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: center;
-    background: #354fd1;
+.navbar-item-2 {
+  color: #e2f3f5;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 40px;
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+  background: #354fd1;
 }
 
-.navbar-item-2:hover{
-    background: #E2F3F5;
-    color: #354fd1;
+.navbar-item-2:hover {
+  background: #e2f3f5;
+  color: #354fd1;
 }
 
-.navbar-item-3{
-    color: #E2F3F5;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-size: 40px;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: center;
-    background: #2e45b8;
+.navbar-item-3 {
+  color: #e2f3f5;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 40px;
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+  background: #2e45b8;
 }
 
-.navbar-item-3:hover{
-    background: #E2F3F5;
-    color: #2e45b8;
+.navbar-item-3:hover {
+  background: #e2f3f5;
+  color: #2e45b8;
 }
 
-.navbar-item-4{
-    color: #E2F3F5;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-size: 40px;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: center;
-    background: #263a9b;
+.navbar-item-4 {
+  color: #e2f3f5;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 40px;
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+  background: #263a9b;
 }
 
-.navbar-item-4:hover{
-    background: #E2F3F5;
-    color: #263a9b;
+.navbar-item-4:hover {
+  background: #e2f3f5;
+  color: #263a9b;
 }
 
-.navbar-item-5{
-    color: #E2F3F5;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-size: 40px;
-    flex-grow: 1;
-    padding: 10px;
-    text-align: center;
-    background: #1e2d7a;
+.navbar-item-5 {
+  color: #e2f3f5;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 40px;
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+  background: #1e2d7a;
 }
 
-.navbar-item-5:hover{
-    background: #E2F3F5;
-    color: #1e2d7a;
+.navbar-item-5:hover {
+  background: #e2f3f5;
+  color: #1e2d7a;
 }
 
-.svglogout{
-    width: 40px;
-    height: 40px;
-    fill: #E2F3F5;
+.svglogout {
+  width: 40px;
+  height: 40px;
+  fill: #e2f3f5;
 }
 
-#logout{
-    background: #162158;
-    border: none;
-    align-items: center;
-    padding: 10px;
+#logout {
+  background: #162158;
+  border: none;
+  align-items: center;
+  padding: 10px;
 }
 
-#logout:hover{
-    background: #E2F3F5;
-    cursor: pointer;
+#logout:hover {
+  background: #e2f3f5;
+  cursor: pointer;
 }
 
-#logout:hover > svg{
-    fill: black;
+#logout:hover > svg {
+  fill: #162158;
 }
