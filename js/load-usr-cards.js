@@ -11,8 +11,10 @@ Promise.resolve(getMarker()).then((users) => {
   users.forEach((users) => {
     var state = "whiteContainer";
     var img =
-      '<img class="card-container-body-image-container-photo" src="../media/img/ardilla.png"></img>';
-    var location = "Madrid";
+      '<img class="card-container-body-image-container-photo" src="../media/img/flamingo.png"></img>';
+
+    var location = users.locationName;
+
     var card =
       '<div class="card-container"><div class="card-container-delete"><img class="card-container-delete-icon" id="' +
       users.email +

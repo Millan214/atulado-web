@@ -17,15 +17,17 @@ Promise.resolve(getMarker()).then((volunteers) => {
       '<img class="card-container-body-image-container-photo" src="../media/img/ardilla.png"></img>';
     var rate = volunteer.rate;
     var rateimg = "";
-    for (let s = 0; s < rate; s++) {
+    for (let s = 0; s < Math.round(rate); s++) {
       rateimg +=
         '<img class="card-container-body-image-rate-star filledStar" src="../media/img/filledStar.svg"></img>';
     }
-    for (let se = 0; se < 5 - rate; se++) {
+    for (let se = 0; se < 5 - Math.round(rate); se++) {
       rateimg +=
         '<img class="card-container-body-image-rate-star emptyStar" src="../media/img/emptyStar.svg"></img>';
     }
-    var location = "Madrid";
+
+    var location = volunteer.locationName;
+
     var card =
       '<div class="card-container"><div class="card-container-delete"><img class="card-container-delete-icon" id="' +
       volunteer.email +

@@ -4,14 +4,18 @@ firebase.auth().onAuthStateChanged((user) => {
         // https://firebase.google.com/docs/reference/js/firebase.User
         var uid = user.uid;
         // The user has to click the logout button to reach the login
-        if(document.location.pathname == "/index.html"){
-            document.location.href = "/html/show_vols.html"
+        console.log("signed in")
+        console.log(document.location.pathname)
+        if(document.location.pathname == "/"){
+            document.location.href = "html/show_vols.html"
         }
     } else {
         // User is signed out
-        // If the user is not signed he cant reach anything that's not index.html
-        if(document.location.pathname != "/index.html"){
-            document.location.href = "/index.html"
+        // If the user is not signed he cant reach anything that's not index.html        
+        console.log("signed out")
+        console.log(document.location.pathname)
+        if(document.location.pathname != "/"){
+            document.location.href = "/"
         }
     }
   });

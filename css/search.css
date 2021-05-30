@@ -131,6 +131,12 @@
     
 }
 
+@media (max-width: 1335px){
+    .dropdown-container{
+        top: 192px;
+    }
+}
+
 @media (max-width: 1105px){
     .dropdown-container{
         background: #A0BBFF;
@@ -157,11 +163,11 @@
     }
 }
 
-@media (max-width: 667px){
+@media (max-width: 669px){
     .dropdown-container{
         background: #A0BBFF;
         right: 0;
-        top: 267px;
+        top: 261px;
         width: 25%;
         position: absolute;
         display: none;
@@ -183,7 +189,7 @@
     }
 }
 
-@media (max-width: 438px){
+@media (max-width: 562px){
     .dropdown-container{
         background: #A0BBFF;
         right: 0;
@@ -210,6 +216,24 @@
         cursor: pointer;
         background: #3D5AF1;
         color: white;
+    }
+}
+
+@media (max-width: 426px){
+    .dropdown-container{
+        top: 398px;
+    }
+}
+
+@media (max-width: 366px){
+    .dropdown-container{
+        top: 405px;
+    }
+}
+
+@media (max-width: 347px){
+    .dropdown-container{
+        top: 454px;
     }
 }
 

@@ -1,68 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" href="css/css.css">
-        <link rel="stylesheet" href="css/login.css">
-        <title>Home</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- FIREBASE -->
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Home</title>
 
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <!-- FIREBASE -->
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
-        <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyCFA1xRtDeZRJ6LjqMP25hvKumsDc0LlwM",
-            authDomain: "acervointergeneracional.firebaseapp.com",
-            projectId: "acervointergeneracional",
-            storageBucket: "acervointergeneracional.appspot.com",
-            messagingSenderId: "23450529141",
-            appId: "1:23450529141:web:5a687bdbfaae5234def73c",
-            measurementId: "G-KRL71E4FEK"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        </script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
 
-        <script src="js/check-page.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBzbSG7p87D6-B1UtodvU64W8_Do15Wy10",
+        authDomain: "acervointergeneracional-9b1ff.firebaseapp.com",
+        projectId: "acervointergeneracional-9b1ff",
+        storageBucket: "acervointergeneracional-9b1ff.appspot.com",
+        messagingSenderId: "30380390354",
+        appId: "1:30380390354:web:5bb85d8191facdaf347a0b",
+        measurementId: "G-XVDKLGVS06",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 
-    </head>
-    <body>
-        <!-- Message -->
-        <div class="info info-ok display-none">
-            <span class="message"></span>
-            <svg class="close-icon" width="30px" viewBox="0 0 329.26933 329" xmlns="http://www.w3.org/2000/svg"><path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"/></svg>
+    <script src="js/check-page.js"></script>
+
+  </head>
+  <body>
+    <!-- Message -->
+    <div class="info info-ok display-none">
+      <span class="message"></span>
+      <svg
+        class="close-icon"
+        width="30px"
+        viewBox="0 0 329.26933 329"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0"
+        />
+      </svg>
+    </div>
+
+    <!-- Body -->
+    <form id="form" action="html/show_vols.html" method="POST">
+      <div class="container">
+        <div class="vertical-container">
+          <input
+            type="text"
+            placeholder="user"
+            class="input btn bg-color1"
+            id="input-login"
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            class="input btn bg-color1"
+            id="input-password"
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <button type="submit" class="submit btn bg-color2">login</button>
         </div>
+        <img class="img" src="media/img/entrando.svg" />
+      </div>
+    </form>
 
-        <!-- Body -->
-        <form id="form" action="html/show_vols.html" method="POST">
-            <div class="container">
-                <div class="vertical-container">
-                    <input type="text" placeholder="user" class="input btn bg-color1" id="input-login" spellcheck="false" autocomplete="off"/>
-                    <input type="password" placeholder="password" class="input btn bg-color1" id="input-password" spellcheck="false" autocomplete="off"/>
-                    <button type="submit" class="submit btn bg-color2">login</button>
-                </div>
-                <img class="img" src="media/img/entrando.svg">
-            </div>
-        </form>
+    <!-- OTHER SCRIPTS -->
 
-        <!-- OTHER SCRIPTS -->
-
-        <script src="js/sweetalert2@10.js"></script>
-        <script src="js/login-validate.js"></script>
-        <script src="js/myAlerts.js"></script>
-        
-    </body>
+    <script src="js/sweetalert2@10.js"></script>
+    <script src="js/login-validate.js"></script>
+    <script src="js/myAlerts.js"></script>
+  </body>
 </html>
