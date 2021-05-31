@@ -16,6 +16,8 @@ function validateEmail(email) {
 add_form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  var currentUser = firebase.auth().currentUser;
+
   if (
     input_email.value == "" ||
     input_pswd.value == "" ||
@@ -38,22 +40,21 @@ add_form.addEventListener("submit", (e) => {
             input: "password",
             confirmButtonText: "Next &rarr;",
             showCancelButton: true,
-            progressSteps: ["1", "2"],
+            progressSteps: ["1"],
           })
             .queue([
               {
                 title:
-                  "<span class='montserrat'>Introduce your admin e-mail</span>",
-                text: "Only admins can change use admin powers",
-              },
-              "<span class='montserrat'>Introduce your password</span>",
+                  "<span class='montserrat'>Introduce your password</span>",
+                text: "Only admins can use admin powers",
+              }
             ])
             .then((result) => {
               if (result.value) {
                 // Log in with that user
                 firebase
                   .auth()
-                  .signInWithEmailAndPassword(result.value[0], result.value[1])
+                  .signInWithEmailAndPassword(currentUser.email, result.value[0])
                   .then((userCredential) => {
                     // Signed in
                     // Create user
@@ -94,8 +95,8 @@ add_form.addEventListener("submit", (e) => {
                         firebase
                           .auth()
                           .signInWithEmailAndPassword(
-                            result.value[0],
-                            result.value[1]
+                            currentUser.email,
+                            result.value[0]
                           )
                           .then((userCredential) => {
                             // Signed in
@@ -108,7 +109,6 @@ add_form.addEventListener("submit", (e) => {
                               "success"
                             );
                             result.value[0] = "";
-                            result.value[1] = "";
                           })
                           .catch((error) => {
                             var errorMessage = error.message;

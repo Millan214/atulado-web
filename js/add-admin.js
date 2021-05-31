@@ -3,11 +3,11 @@ const password = document.querySelector("#add_form_input_pswd");
 const password2 = document.querySelector("#add_form_input_pswd2");
 const form = document.getElementById("add_form");
 const db = firebase.firestore();
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  var user = firebase.auth().currentUser;
-  console.log("🚀 ~ file: add-admin.js ~ line 7 ~ user", user);
+  var currentUser = firebase.auth().currentUser;
 
   if (password.value == "" || password2.value == "" || email.value == "") {
     Swal.fire({
@@ -22,22 +22,21 @@ form.addEventListener("submit", (e) => {
         input: "password",
         confirmButtonText: "Next &rarr;",
         showCancelButton: true,
-        progressSteps: ["1", "2"],
+        progressSteps: ["1"],
       })
         .queue([
           {
             title:
-              "<span class='montserrat'>Introduce your admin e-mail</span>",
-            text: "Only admins can change use admin powers",
-          },
-          "<span class='montserrat'>Introduce your password</span>",
+              "<span class='montserrat'>Introduce your password</span>",
+            text: "Only admins can use admin powers",
+          }
         ])
         .then((result) => {
           if (result.value) {
             // Log in with that user
             firebase
               .auth()
-              .signInWithEmailAndPassword(result.value[0], result.value[1])
+              .signInWithEmailAndPassword(currentUser.email, result.value[0])
               .then((userCredential) => {
                 // Signed in
                 // Create admin
@@ -51,8 +50,8 @@ form.addEventListener("submit", (e) => {
                     firebase
                       .auth()
                       .signInWithEmailAndPassword(
-                        result.value[0],
-                        result.value[1]
+                        currentUser.email,
+                        result.value[0]
                       )
                       .then((userCredential) => {
                         // Signed in
@@ -73,7 +72,6 @@ form.addEventListener("submit", (e) => {
                             );
                           });
                         result.value[0] = "";
-                        result.value[1] = "";
                       })
                       .catch((error) => {
                         var errorCode = error.code;

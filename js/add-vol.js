@@ -16,6 +16,8 @@ function validateEmail(email) {
 add_form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  var currentUser = firebase.auth().currentUser;
+
   if (
     input_email.value == "" ||
     input_pswd.value == "" ||
@@ -38,21 +40,20 @@ add_form.addEventListener("submit", (e) => {
             input: "password",
             confirmButtonText: "Next &rarr;",
             showCancelButton: true,
-            progressSteps: ["1", "2"],
+            progressSteps: ["1"],
           })
             .queue([
               {
                 title:
-                  "<span class='montserrat'>Introduce your admin e-mail</span>",
+                  "<span class='montserrat'>Introduce your password</span>",
                 text: "Only admins can change use admin powers",
-              },
-              "<span class='montserrat'>Introduce your password</span>",
+              }
             ])
             .then((result) => {
               if (result.value) {
                 // Log in with that user
-                var log = result.value[0];
-                var pswd = result.value[1];
+                var log = currentUser.email;
+                var pswd = result.value[0];
                 firebase
                   .auth()
                   .signInWithEmailAndPassword(log, pswd)

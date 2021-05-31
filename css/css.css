@@ -1,5 +1,6 @@
 @import url("navbar.css");
 @import url("load.css");
+@import url("progressbar.css");
 body {
   background: #0e153a;
   margin: 0;
