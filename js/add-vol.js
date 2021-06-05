@@ -69,7 +69,7 @@ add_form.addEventListener("submit", (e) => {
                       .then((userCredential) => {
                         // Signed in
                         var vol = userCredential.user;
-
+                        console.log("usuario añadido")
                         // Add user to firestore
                         db.collection("volunteers")
                           .doc(input_email.value)

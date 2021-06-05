@@ -23,7 +23,6 @@ form.addEventListener("submit", (e) => {
               .catch((error) => {
                 var errorCode = error.code.substring(5);
                 var errorMessage = error.message;
-
                 Swal.fire({
                   icon: "error",
                   title: '<span class="montserrat">' + errorCode + "</span>",
@@ -31,7 +30,6 @@ form.addEventListener("submit", (e) => {
                 });
               });
           }
-
           //animate progress bar
           progressbar.animate([
             // keyframes
