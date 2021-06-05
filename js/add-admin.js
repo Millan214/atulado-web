@@ -9,16 +9,18 @@ const password2 = document.querySelector("#add_form_input_pswd2");
 const form = document.getElementById("add_form");
 
 form.addEventListener("submit", (e) => {
+  //Elimina la acción por defecto que hace el formulario cuando se envia
   e.preventDefault();
-  if (checkInputs()) {
-    errorMsg("Empty fields", "Please fill all the inputs");
-  } else {
+
+  if (!checkInputs()) {
     if (pswdEquals()) {
       // Ask for data
       inputMsg(auth.currentUser);
     } else {
       errorMsg("Check the passwords !", "Passwords dont match");
     }
+  } else {
+    errorMsg("Empty fields", "Please fill all the inputs");
   }
 });
 
@@ -173,6 +175,7 @@ function pswdEquals() {
 
 /**
  * Comprueba que no hay inputs vacios
+ * @returns boolean
  */
 function checkInputs() {
   return password.value == "" || password2.value == "" || email.value == "";

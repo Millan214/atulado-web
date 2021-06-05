@@ -1,4 +1,5 @@
-var db = firebase.firestore();
+const db = firebase.firestore();
+const auth = firebase.auth()
 
 const add_form = document.querySelector("#add_form");
 const input_email = document.querySelector("#add_form_input_e-mail");
@@ -7,32 +8,17 @@ const input_pswd2 = document.querySelector("#add_form_input_pswd2");
 const input_name = document.querySelector("#add_form_input_name");
 const input_surname = document.querySelector("#add_form_input_surname");
 
-function validateEmail(email) {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
-
 add_form.addEventListener("submit", (e) => {
+  //Elimina la acción por defecto que hace el formulario cuando se envia
   e.preventDefault();
 
-  var currentUser = firebase.auth().currentUser;
+  var currentUser = auth.currentUser;
 
-  if (
-    input_email.value == "" ||
-    input_pswd.value == "" ||
-    input_pswd2 == "" ||
-    input_name == "" ||
-    input_surname == ""
-  ) {
-    Swal.fire({
-      icon: "error",
-      title: "<span class='montserrat'>Fill all the fields!</span>",
-      text: "There are unfilled fields",
-    });
+  if (checkInputs()) {
+    errorMsg("Fill all the fields!","There are unfilled fields")
   } else {
     if (validateEmail(input_email.value)) {
-      if (input_pswd.value === input_pswd2.value) {
+      if (pswdEquals()) {
         if (input_pswd.value.length >= 6) {
           // Create user with auth
           // Ask for data
@@ -52,14 +38,12 @@ add_form.addEventListener("submit", (e) => {
             .then((result) => {
               if (result.value) {
                 // Log in with that user
-                firebase
-                  .auth()
+                auth
                   .signInWithEmailAndPassword(currentUser.email, result.value[0])
                   .then((userCredential) => {
                     // Signed in
                     // Create user
-                    firebase
-                      .auth()
+                    auth
                       .createUserWithEmailAndPassword(
                         input_email.value,
                         input_pswd.value
@@ -92,8 +76,7 @@ add_form.addEventListener("submit", (e) => {
                           });
 
                         // Log in with the other admin
-                        firebase
-                          .auth()
+                        auth
                           .signInWithEmailAndPassword(
                             currentUser.email,
                             result.value[0]
@@ -171,3 +154,47 @@ add_form.addEventListener("submit", (e) => {
     }
   }
 });
+
+function validateEmail(email) {
+  const re =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+/**
+ * Comprueba que no hay inputs vacios
+ * @returns boolean
+ */
+ function checkInputs() {
+  return input_email.value == "" || input_pswd.value == "" || input_pswd2 == "" || input_name == "" || input_surname == "";
+}
+
+/**
+ * Mensaje de operación satisfactoria
+ * @param {String} title Título del mensaje
+ * @param {String} msg Mensaje de información secundario
+ */
+ function successMsg(title, msg) {
+  Swal.fire(title, msg, "success");
+}
+
+/**
+ * Mensaje de error usando sweetalert
+ * @param {String} title Título del mensaje
+ * @param {String} text Mensaje de información secundario
+ */
+function errorMsg(title, text) {
+  Swal.fire({
+    icon: "error",
+    title: '<span class="montserrat">' + title + "</span>",
+    text: text,
+  });
+}
+
+/**
+ * Comprueba si las contraseñas coinciden
+ * @returns boolean
+ */
+ function pswdEquals() {
+  return input_pswd.value === input_pswd2.value
+}
