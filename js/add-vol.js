@@ -105,6 +105,8 @@ function addToFirestore() {
       name: input_name.value,
       surname: input_surname.value,
       email: input_email.value,
+      rate: 0,
+      available: false
     })
     .then(() => {
       console.log("Document written successfully");
