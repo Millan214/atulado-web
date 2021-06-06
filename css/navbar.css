@@ -1,8 +1,13 @@
 .navbar {
   background: #3d5af1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .navbar-item-1 {
@@ -10,7 +15,9 @@
   text-decoration: none;
   font-family: "Montserrat";
   font-size: 40px;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
   text-align: center;
   background: #3d5af1;
@@ -26,7 +33,9 @@
   text-decoration: none;
   font-family: "Montserrat";
   font-size: 40px;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
   text-align: center;
   background: #354fd1;
@@ -42,7 +51,9 @@
   text-decoration: none;
   font-family: "Montserrat";
   font-size: 40px;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
   text-align: center;
   background: #2e45b8;
@@ -58,7 +69,9 @@
   text-decoration: none;
   font-family: "Montserrat";
   font-size: 40px;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
   text-align: center;
   background: #263a9b;
@@ -74,7 +87,9 @@
   text-decoration: none;
   font-family: "Montserrat";
   font-size: 40px;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
   text-align: center;
   background: #1e2d7a;
@@ -94,7 +109,9 @@
 #logout {
   background: #162158;
   border: none;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
 }
 
@@ -103,6 +120,7 @@
   cursor: pointer;
 }
 
-#logout:hover > svg {
+#logout:hover svg {
   fill: #162158;
 }
+/*# sourceMappingURL=navbar.css.map */

@@ -1,114 +1,128 @@
-.card-container{
-    margin: 20px;   
-    border-radius: 10px;
-    background: white;
-    box-shadow:  10px 10px 10px black;
+.card-container {
+  margin: 20px;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 10px 10px 10px black;
+          box-shadow: 10px 10px 10px black;
+  /* Delete */
+  /* Body */
 }
 
-/* Delete */
-.card-container-delete{
-    background-color: #A0BBFF;
-    float: right;
-    height: 26px;
-    border-radius: 0px 10px 0px 10px;
-    padding: 2px;
+.card-container .card-container-delete {
+  background-color: #a0bbff;
+  float: right;
+  height: 26px;
+  border-radius: 0px 10px 0px 10px;
+  padding: 2px;
 }
 
-.card-container-delete:hover{
-    cursor: pointer;
+.card-container .card-container-delete:hover {
+  cursor: pointer;
 }
 
-/* Body */
-.card-container-body{
-    padding: 20px;
-    display: flex;
+.card-container .card-container-body {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*--Fit the photo into a circle */
+  /* Rate (stars) */
 }
 
-.card-container-body-image-wrapper{
-    background-color: lightblue;
+.card-container .card-container-body .card-container-body-image-wrapper {
+  background-color: #a0bbff;
 }
 
-    /*--Fit the photo into a circle */
-.card-container-body-image-container{
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border-radius: 100%;
-    margin: auto;
+.card-container .card-container-body .card-container-body-image-container {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: auto;
 }
 
-.greenContainer{
-    border: 6px solid #17B978;
-    background: #17B978;
+.card-container .card-container-body .card-container-body-image-container-photo {
+  width: 150%;
+  height: auto;
+  margin-top: 50%;
+  margin-left: -25%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-clip-path: circle();
+          clip-path: circle();
 }
 
-.redContainer{
-    border: 6px solid #E85A5A;
-    background: #E85A5A;
+.card-container .card-container-body .card-container-body-image-rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.whiteContainer{
-    border: 6px solid #fff;
-    background: #fff;
+.card-container .card-container-body .card-container-body-image-rate .card-container-body-image-rate-star {
+  width: 20px;
+  margin: 2px;
 }
 
-.card-container-body-image-container-photo{
-    width: 150%;
-    height: auto;
-    margin-top: 50%;
-    margin-left: -25%;
-    transform: translateY(-50%);
-    clip-path: circle();
+.greenContainer {
+  border: 6px solid #17b978;
+  background: #17b978;
 }
 
-/* Rate (stars) */
-.card-container-body-image-rate{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.redContainer {
+  border: 6px solid #e85a5a;
+  background: #e85a5a;
 }
 
-.card-container-body-image-rate-star{
-    width: 20px;
-    margin: 2px;
+.whiteContainer {
+  border: 6px solid #fff;
+  background: #fff;
 }
 
 /* User name/surname */
-.card-container-body-name{
-    margin: auto;
+.card-container-body-name {
+  margin: auto;
 }
 
-.card-container-body-name > p{
-    margin: 0;
-    font-family: 'Montserrat';
-    font-size: 30px;
-    margin-left: 20px;
+.card-container-body-name > p {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 30px;
+  margin-left: 20px;
 }
 
 /* Footer */
-.card-container-footer{
-    background: #3D5AF1;
-    border-radius: 0 0 10px 10px;
-    padding: 5px;
-    position:relative;
+.card-container-footer {
+  background: #3d5af1;
+  border-radius: 0 0 10px 10px;
+  padding: 5px;
+  position: relative;
 }
 
-.card-container-footer > span{
-    color: white;
-    font-family: 'Montserrat';
-    vertical-align: middle;
+.card-container-footer > span {
+  color: #fff;
+  font-family: "Montserrat";
+  vertical-align: middle;
 }
 
-.card-container-footer-icon{
-    vertical-align: middle;
+.card-container-footer-icon {
+  vertical-align: middle;
 }
 
-.card-container-footer-loctext{
-    font-weight: bold;
+.card-container-footer-loctext {
+  font-weight: bold;
 }
 
-.card-container-footer-location{
-    margin-left: 15px;
-    font-size: 15px;
+.card-container-footer-location {
+  margin-left: 15px;
+  font-size: 15px;
 }
+/*# sourceMappingURL=cards.css.map */
